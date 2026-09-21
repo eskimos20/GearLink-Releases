@@ -71,6 +71,32 @@ connected.
 
 The drivetrain selected in Settings applies either way.
 
+### Network requirements (Wi-Fi bridge)
+
+The `GearLink-IP-Bridge` and `GearLink-Controller` services are
+discovered over **mDNS / DNS-SD** — standard Bonjour multicast. For
+apps to find them, multicast must flow between the phone and the
+device running the app:
+
+| Service | mDNS type | Port |
+|---|---|---|
+| `GearLink-IP-Bridge` (trainer, DirCon) | `_wahoo-fitness-tnp._tcp` | TCP 36866 |
+| `GearLink-Controller` (MyWhoosh buttons) | `_openbikecontrol._tcp` | TCP 36868 |
+| mDNS itself (discovery) | — | UDP 5353, multicast 224.0.0.251 |
+
+Requirements:
+
+- Both devices on the **same network/subnet** — mDNS does not cross
+  VLANs or guest networks without an mDNS repeater
+- **Client/AP isolation disabled** on the Wi-Fi — it blocks both the
+  multicast announcements and the TCP connections themselves
+- **Multicast allowed** — on some routers this means enabling IGMP
+  snooping or an "mDNS/Bonjour forwarding" option
+- No VPN on either device
+
+If the router can't be configured, use `GearLink-BT-Bridge` over
+Bluetooth instead — it needs no network at all.
+
 ### Compare / Calibrate (C/C)
 
 Compares two power sources against each other — typically your
