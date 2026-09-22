@@ -25,6 +25,14 @@ from the [Releases](../../releases) page on an Android phone. Once
 installed, the app notifies you under the logo when a newer build is
 available and can download and install it directly.
 
+## Screenshots
+
+| | | |
+|---|---|---|
+| ![Home](images/1.jpg) | ![Home riding](images/2.jpg) | ![Devices](images/3.jpg) |
+| ![Devices connected](images/4.jpg) | ![Calibration](images/5.jpg) | ![Settings](images/6.jpg) |
+| ![Help](images/7.jpg) | ![Help — pairing](images/8.jpg) | ![Help — calibrate](images/9.jpg) |
+
 ## How GearLink works
 
 ### The bridge
