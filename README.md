@@ -11,8 +11,8 @@ LAN/Wi-Fi.
   standard controllable fitness machine over Bluetooth or LAN
 - Forwards power, cadence, speed and heart-rate telemetry to connected
   apps
-- Relays controller input (shift buttons, steering and brake paddles)
-  to the app
+- Turns controller presses (shift buttons, steering and brake paddles)
+  into resistance changes through the virtual drivetrain
 - Offers virtual drivetrain emulation — selectable real-world cassette
   and chainring setups with per-gear resistance shaping
 - Sim / ERG / grade and resistance control pass-through to the trainer
@@ -50,24 +50,27 @@ connected.
 
 ### 3 · Pair in your app
 
-- **Zwift** — pair `GearLink-BT-Bridge` (Bluetooth) or
-  `GearLink-IP-Bridge` (Wi-Fi; the PC running Zwift must be on the
-  same network). Select it as trainer, power source and — if a band
-  is connected — heart rate.
-- **Rouvy** — pair `GearLink-BT-Bridge` over Bluetooth as your
-  trainer.
-- **MyWhoosh** — pair the trainer over Bluetooth as
-  `GearLink-BT-Bridge`. A Click/Play connected to GearLink also shows
-  up as `GearLink-Controller` in MyWhoosh's controller pairing.
+Zwift, Rouvy and MyWhoosh all work over Wi-Fi or Bluetooth. Pair
+`GearLink-IP-Bridge` when the app device is on the same network —
+Wi-Fi is the recommended link and avoids BLE interference entirely.
+Otherwise pair `GearLink-BT-Bridge` over Bluetooth.
+
+Either way, select GearLink as trainer / controllable, power source,
+cadence and — if a band is connected — heart rate. GearLink devices
+always appear as these sensor roles only — never as a game
+controller.
 
 ### Controllers — two ways
 
-- **Via GearLink** — pair the Click or Play under Devices. Button
-  presses are forwarded through the bridge, which gives shifting to
-  apps without native controller support (e.g. MyWhoosh) and lets the
-  virtual drivetrain shape every gear.
-- **Direct to the app** — pair the controller in the app's own
-  pairing screen instead and the app handles the buttons natively.
+- **Via GearLink** — pair the Click or Play under Devices. Presses
+  drive the virtual drivetrain, so the trainer's resistance follows
+  every shift. The controller never appears as a controller inside
+  the app — GearLink devices show up only as power source, cadence,
+  resistance and heart rate.
+- **Direct to the app** — Zwift and Rouvy pair controllers natively
+  (MyWhoosh has no controller support). Shifts then go through the
+  app, which relays them back to GearLink as trainer control
+  commands — the same resistance change in the end.
 
 The drivetrain selected in Settings applies either way.
 
@@ -81,7 +84,7 @@ device running the app:
 | Service | mDNS type | Port |
 |---|---|---|
 | `GearLink-IP-Bridge` (trainer, DirCon) | `_wahoo-fitness-tnp._tcp` | TCP 36866 |
-| `GearLink-Controller` (MyWhoosh buttons) | `_openbikecontrol._tcp` | TCP 36868 |
+| `GearLink-Controller` (reserved controller channel) | `_openbikecontrol._tcp` | TCP 36868 |
 | mDNS itself (discovery) | — | UDP 5353, multicast 224.0.0.251 |
 
 Requirements:
