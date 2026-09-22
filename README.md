@@ -11,10 +11,11 @@ LAN/Wi-Fi.
   standard controllable fitness machine over Bluetooth or LAN
 - Forwards power, cadence, speed and heart-rate telemetry to connected
   apps
-- Turns controller presses (shift buttons, steering and brake paddles)
-  into resistance changes through the virtual drivetrain
-- Offers virtual drivetrain emulation — selectable real-world cassette
-  and chainring setups with per-gear resistance shaping
+- Turns controller presses into gear shifts — each shift moves the
+  virtual drivetrain and reshapes the trainer's resistance
+- One dynamic 24-gear drivetrain — gear ratios scale to the rider's
+  workout range and power max, from light climbing gears to a sprint
+  top end
 - Sim / ERG / grade and resistance control pass-through to the trainer
 - Supports multiple simultaneous app connections and multiple sensors
 
@@ -80,7 +81,8 @@ controller.
   app, which relays them back to GearLink as trainer control
   commands — the same resistance change in the end.
 
-The drivetrain selected in Settings applies either way.
+The drivetrain settings in Settings (workout range and power max)
+apply either way.
 
 ### Network requirements (Wi-Fi bridge)
 
@@ -127,11 +129,13 @@ trainer and a standalone power meter.
 
 ### Settings
 
-**Drivetrain** picks which gearing your shifts emulate. **Trainer
-difficulty** scales the terrain resistance sent to the trainer (not
-used by Zwift). **Rider weight** feeds trainers that use it.
-**Debug** enables diagnostics — Download saves the log to
-`Download/GearLink-log.txt`.
+**Drivetrain** shows the single 24-gear "Zwift Default" drivetrain —
+a dual-thumb **workout range** slider and **Power max** shape how
+much resistance each virtual gear demands: gears 1–6 stay light for
+climbs, the workout range spreads across the middle gears and the
+top gears reach for your sprint power. **Rider weight** feeds
+trainers that use it. **Debug** enables diagnostics — Download saves
+the log to `Download/GearLink-log.txt`.
 
 ## Disclaimer
 
