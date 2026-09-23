@@ -129,7 +129,7 @@ trainer and a standalone power meter.
 
 ### Settings
 
-**Drivetrain** shows the single 24-gear "Zwift Default" drivetrain.
+**Drivetrain** shows the single 24-gear drivetrain.
 One three-thumb slider shapes how much resistance each virtual gear
 demands:
 
