@@ -129,13 +129,22 @@ trainer and a standalone power meter.
 
 ### Settings
 
-**Drivetrain** shows the single 24-gear "Zwift Default" drivetrain —
-a dual-thumb **workout range** slider and **Power max** shape how
-much resistance each virtual gear demands: gears 1–6 stay light for
-climbs, the workout range spreads across the middle gears and the
-top gears reach for your sprint power. **Rider weight** feeds
-trainers that use it. **Debug** enables diagnostics — Download saves
-the log to `Download/GearLink-log.txt`.
+**Drivetrain** shows the single 24-gear "Zwift Default" drivetrain.
+One three-thumb slider shapes how much resistance each virtual gear
+demands:
+
+- The left and middle thumbs set your **workout range** — the watts
+  where you spend most of a ride. Gears 7–22 spread across it, so
+  shifting stays fine-grained exactly where you train.
+- The right thumb is your **power max** — your hardest one-second
+  sprint, reserved for gears 23–24.
+- Gears 1–6 stay light bailout gears for climbs.
+
+The track fades blue → red up to the power max and turns black past
+it — watts in the black zone are unreachable. **Reset** restores the
+defaults (100–400 W / 2200 W). **Rider weight** feeds trainers that
+use it. **Debug** enables diagnostics — Download saves the log to
+`Download/GearLink-log.txt`.
 
 ## Disclaimer
 
