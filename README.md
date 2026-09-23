@@ -146,9 +146,16 @@ defaults (100–400 W / 2200 W). **Rider weight** feeds trainers that
 use it. **Debug** enables diagnostics — Download saves the log to
 `Download/GearLink-log.txt`.
 
+### Tested on
+
+The only two Trainers I had the oppertunity to test is:
+
+Tacx Neo2T 2850
+Wahoo Kickr Core V1
+
 ## Disclaimer
 
-This is experimental, untested software provided as-is, intended for
+The Software is not fully tested and provided as-is, intended for
 private use. Use it at your own risk — the author takes no
 responsibility for any damage, data loss or compatibility issues.
 
