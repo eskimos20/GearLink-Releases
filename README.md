@@ -1,9 +1,12 @@
 # GearLink Releases
 
-Public APK releases for **GearLink** — an Android app that bridges smart
+Public releases for **GearLink** — an app that bridges smart
 trainers, power meters, heart-rate sensors and wireless controllers to
 cycling apps such as Zwift, Rouvy and MyWhoosh, over Bluetooth and
 LAN/Wi-Fi.
+
+Available for **Android** (`GearLink-x.y.z.apk`) and **Linux**
+(`GearLink-Linux-x.y.z.jar`).
 
 ## What GearLink does
 
@@ -21,10 +24,33 @@ LAN/Wi-Fi.
 
 ## Install
 
-This repository only hosts downloadable builds. Install the latest APK
-from the [Releases](../../releases) page on an Android phone. Once
-installed, the app notifies you under the logo when a newer build is
-available and can download and install it directly.
+This repository only hosts downloadable builds.
+
+### Android
+
+Install the latest APK from the [Releases](../../releases) page on an
+Android phone. Once installed, the app notifies you under the logo
+when a newer build is available and can download and install it
+directly.
+
+### Linux
+
+Download `GearLink-Linux-x.y.z.jar` from the same release and run it
+with Java 17 or newer:
+
+```bash
+java -jar GearLink-Linux-x.y.z.jar              # desktop GUI
+java -jar GearLink-Linux-x.y.z.jar --headless   # headless daemon
+java -jar GearLink-Linux-x.y.z.jar --help       # all options
+```
+
+The Linux build needs `bluetoothd` running and a BLE USB adapter or
+on-board radio (check `bluetoothctl show` → `Powered: yes`). For
+`GearLink-BT-Bridge` the adapter must support the Bluetooth
+*peripheral* role; `GearLink-IP-Bridge` over LAN works on any
+machine — and if no adapter is found the app still starts, shows a
+notice, and serves the IP bridge only. A live status endpoint answers
+at `http://127.0.0.1:36900/status`.
 
 ## Screenshots
 
